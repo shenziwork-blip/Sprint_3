@@ -101,23 +101,4 @@ class OnlineSalesRegisterCollector:
         if len(tel_str) != 10:
             raise ValueError('Необходимо ввести 10 цифр после "+7"')
         return f"+7{tel_str}"
-
-register = OnlineSalesRegisterCollector()
-
-register.add_item_to_cheque('чипсы')
-register.add_item_to_cheque('кола')
-register.add_item_to_cheque('молоко')
-register.add_item_to_cheque('кефир')
-
-print("Товары в чеке:", register.name_items)
-print("Количество товаров:", register.number_items)
-print("Сумма чека:", register.check_amount())
-print("НДС 20%:", register.twenty_percent_tax_calculation())
-print("НДС 10%:", register.ten_percent_tax_calculation())
-print("Общий НДС:", register.total_tax())
-
-print("Телефон:", OnlineSalesRegisterCollector.get_telephone_number(9991234567))
-
-register.add_item_to_cheque('')
-register.add_item_to_cheque('несуществующий')
-register.delete_item_from_check('хлеб')
+    
